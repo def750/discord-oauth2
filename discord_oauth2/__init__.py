@@ -29,7 +29,7 @@ class DiscordAuth:
       'Content-Type': 'application/x-www-form-urlencoded'
     }
     
-    tokens = requests.post('https://discord.com/api/v8/oauth2/token', data=data, headers=headers)
+    tokens = requests.post('https://discord.com/api/v10/oauth2/token', data=data, headers=headers)
     return tokens.json()
 
 
@@ -46,7 +46,7 @@ class DiscordAuth:
       'Content-Type': 'application/x-www-form-urlencoded'
     }
       
-    tokens = requests.post('https://discord.com/api/v8/oauth2/token', data=data, headers=headers)
+    tokens = requests.post('https://discord.com/api/v10/oauth2/token', data=data, headers=headers)
     return tokens.json()    
 
 
@@ -56,5 +56,5 @@ class DiscordAuth:
       "Authorization": f'Bearer {access_token}'
     }
 
-    user_data = requests.get('https://discordapp.com/api/users/@me', headers=headers)
+    user_data = requests.get('https://discord.com/api/v10/oauth2/@me', headers=headers)
     return user_data.json()
